@@ -651,6 +651,7 @@ window.onload = function () {
     }
     if (selectServer) {
       if (typeof getCommand.host === "string" || typeof getCommand.h === "string") {
+        console.log(typeof getCommand.host)
         var severAddress;
         if (typeof getCommand.host !== "undefined") {
           severAddress = getCommand.host;
@@ -987,29 +988,10 @@ window.onload = function () {
           Show.ConnectionError();
           Status = "busy";
           clearInterval(Engine);
-          var dummyElement = document.createElement("div");
-          dummyElement.innerHTML = '<a xlink:href="https://openspeedtest.com/FAQ.php?ref=NetworkError" style="cursor: pointer" target="_blank"></a>';
-          var htmlAnchorElement = dummyElement.querySelector("a");
-          Show.oDoLiveSpeed.el.textContent = "Network Error";
-          var circleSVG = document.getElementById("oDoLiveSpeed");
-          htmlAnchorElement.innerHTML = circleSVG.innerHTML;
-          circleSVG.innerHTML = dummyElement.innerHTML;
         }
         if (Status === "SendR") {
           Show.showStatus("All done");
-          // var dummyElement = document.createElement("div");
-          // dummyElement.innerHTML = '<a xlink:href="https://openspeedtest.com?ref=Self-Hosted-Outro&run=5" style="cursor: pointer" target="_blank"></a>';
-          // var htmlAnchorElement = dummyElement.querySelector("a");
-          // Show.oDoLiveSpeed.el.textContent = ost;
-          // var circleSVG = document.getElementById("oDoLiveSpeed");
-          // htmlAnchorElement.innerHTML = circleSVG.innerHTML;
-          circleSVG.innerHTML = dummyElement.innerHTML;
           if (location.hostname != myname.toLowerCase() + com) {
-            // saveTestData = "https://" + myname.toLowerCase() + com + "/results/show.php?" + "&d=" + downloadSpeed.toFixed(3) + "&u=" + uploadSpeed.toFixed(3) + "&p=" + pingEstimate + "&j=" + jitterEstimate + "&dd=" + (dataUsedfordl / 1048576).toFixed(3) + "&ud=" + (dataUsedforul / 1048576).toFixed(3) + "&ua=" + userAgentString;
-            // saveTestData = encodeURI(saveTestData);
-            // var circleSVG2 = document.getElementById("resultsData");
-            // circleSVG2.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", saveTestData);
-            // circleSVG2.setAttribute("target", "_blank");
             if (saveData) {
               ServerConnect(5);
             }
@@ -1158,7 +1140,7 @@ window.onload = function () {
       var lastULoaded = 0;
       var OST = new XMLHttpRequest();
       uReQ[i] = OST;
-      uReQ[i].open("POST", fianlPingServer.Upload + "?n=" + Math.random(), true);
+      uReQ[i].open("GET", fianlPingServer.Upload + "?n=" + Math.random(), true);
       uReQ[i].upload.onprogress = function (e) {
         if (Status == "initup" && some === undefined) {
           var some;
