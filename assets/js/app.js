@@ -1140,7 +1140,7 @@ window.onload = function () {
       var lastULoaded = 0;
       var OST = new XMLHttpRequest();
       uReQ[i] = OST;
-      uReQ[i].open("GET", fianlPingServer.Upload + "?n=" + Math.random(), true);
+      uReQ[i].open("POST", fianlPingServer.Upload + "?n=" + Math.random(), true);
       uReQ[i].upload.onprogress = function (e) {
         if (Status == "initup" && some === undefined) {
           var some;
