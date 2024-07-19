@@ -76,7 +76,7 @@ font-weight: 500;
   color: rgb(113, 113, 113);
 }
 .Credits a:hover {
-color: #14b0fe;
+color: #3d8f40;
 }
 
 .ConnectError {
@@ -265,11 +265,11 @@ color: #14b0fe;
   text-anchor: end;
 }
 #upSymbolDesk {
-  fill: #14b0fe;
+  fill: #4CAF50;
   display: none;
 }
 #downSymbolDesk {
-  fill: #14b0fe;
+  fill: #4CAF50;
   display: none;
 }
 #upSymbolMob {
